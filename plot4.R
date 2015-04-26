@@ -17,7 +17,7 @@ by_year <- group_by(select(NEISCC,year, Emissions),year)
 
 EmDet <- summarise(by_year, TotEm = sum(Emissions)/1000)
 
-png("Proj2_plot4.png", width = 480, height = 480)
+png("plot4.png", width = 480, height = 480)
 
 barplot(EmDet$TotEm, names.arg=EmDet$year, 
          main=expression('Total Emission(Coal combustion) of PM'[2.5]),
