@@ -11,7 +11,7 @@ by_year <- group_by(select(NEI_Baltimore,year, Pollutant, Emissions),year, Pollu
 
 EmDet <- summarise(by_year, TotEm = sum(Emissions))
 
-png("Proj2_plot2.png", width = 480, height = 480)
+png("plot2.png", width = 480, height = 480)
 barplot(EmDet$TotEm, names.arg=EmDet$year, 
          main=expression('Total Emission(Baltimore) of PM'[2.5]),
          xlab='Year', ylab=expression(paste('PM', ''[2.5], ' in Kilotons')))
