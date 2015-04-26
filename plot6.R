@@ -21,7 +21,7 @@ by_year <- group_by(select(NEISCC_BT_LA,year, fips, city, Emissions),year, fips,
 
 EmDet <- summarise(by_year, TotEm = sum(Emissions))
 
-png("Proj2_plot6.png", width = 480, height = 480)
+png("plot6.png", width = 480, height = 480)
 
 ggplot(EmDet, aes(year,TotEm))+ geom_point() + geom_line(aes(color = factor(city))) +ggtitle('Emissions per Type in Baltimore City, Maryland') +ylab(expression(paste('Log', ' of PM'[2.5], ' Emissions'))) +scale_x_continuous(breaks= c(1999, 2002, 2005, 2008))
 
